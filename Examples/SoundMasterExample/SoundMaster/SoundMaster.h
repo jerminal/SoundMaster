@@ -1,6 +1,6 @@
 //
 //  SoundMaster.h
-//  AS Roma
+//  
 //
 //  Created by Igor Khmurets on 12.08.13.
 //  Copyright (c) 2013 Igor Khmurets. All rights reserved.
