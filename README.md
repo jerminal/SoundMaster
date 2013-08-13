@@ -25,3 +25,7 @@ Needs iOS 5.0 and higher, ARC.
 1. Drag SoundMaster folder to your project.
 2. Add AVFoundation framework to your project’s target.
 3. Import «SoundMaster.h» to use engine.
+
+Issues
+------
+Please, inform about bugs or ideas in [Issues](https://github.com/jerminal/SoundMaster/issues)
