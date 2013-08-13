@@ -22,7 +22,7 @@ typedef void (^MusicCompletionBlock)(void);
 /** Called when music ends. Not called while looping */
 @property (copy) MusicCompletionBlock musicCompletion;
 
-#pragma mark - Effects (short sounds that can intersect)
+#pragma mark - Effects (short sounds)
 
 /** Plays sound effect with specified name. Relative volume is 
  setted by default or uses the value from setRelativeVolume:effect: method. */
