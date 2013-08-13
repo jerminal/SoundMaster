@@ -19,9 +19,8 @@ typedef void (^MusicCompletionBlock)(void);
 @property (nonatomic) CGFloat effectsVolume;
 @property (readonly) BOOL isPlayingMusic;
 @property (copy) MusicCompletionBlock musicCompletion;
-@property (copy) MusicCompletionBlock loopCompletion;
 
-#pragma mark - Effects (short sounds that can intersect)
+#pragma mark - Effects (short sounds)
 
 /** Plays sound effect with specified name. Relative volume is 
  setted by default or uses the value from setRelativeVolume:effect: method. */
