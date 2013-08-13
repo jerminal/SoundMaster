@@ -28,7 +28,7 @@ Configuration (iOS 5.0 and higher, ARC)
 Supported Formats
 -------------------
 
-For best results, use 16 bit .caf. You can convert your music files to .caf using afconvert utility.
+For best results use .caf files. You can convert your music files to .caf format using afconvert utility.
 
 For background music (mono):
 
