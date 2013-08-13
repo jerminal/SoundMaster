@@ -14,10 +14,10 @@ Features:
 7. Preloading music and sounds for best performance.
 8. You can look for other features in api.
 
-What’s in the box:
+What’s In The Box:
 --------
-SoundMaster class
-Example iPhone project
+1. SoundMaster class.
+2. Example iPhone project.
 
 Configuration (iOS 5.0 and higher, ARC)
 --------------
@@ -25,6 +25,27 @@ Configuration (iOS 5.0 and higher, ARC)
 2. Add AVFoundation framework to your project’s target.
 3. Import «SoundMaster.h» to use engine.
 
+Supported Formats
+-------------------
+
+For best results, use 16 bit .caf. You can convert your music files to .caf using afconvert utility.
+
+For background music (mono):
+
+	afconvert -f caff -d aac -c 1 {input_file_name} {output_file_name}.caf
+
+For background music (stereo):
+
+ afconvert -f caff -d aac {input_file_name} {output_file_name}.caf
+
+For sound effects (mono):
+
+	afconvert -f caff -d ima4 -c 1 {input_file_name} {output_file_name}.caf
+
+For sound effects (stereo):
+
+	afconvert -f caff -d ima4 {input_file_name} {output_file_name}.caf
+
 Issues
 ------
-Please, inform about bugs or ideas in [Issues](https://github.com/jerminal/SoundMaster/issues)
+Please, inform about bugs or ideas in [Issues](https://github.com/jerminal/SoundMaster/issues).
