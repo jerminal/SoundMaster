@@ -12,14 +12,15 @@ typedef void (^MusicCompletionBlock)(void);
 
 @interface SoundMaster : NSObject
 
+/** Handy singleton */
 + (instancetype)sharedMaster;
 
 @property (nonatomic) NSTimeInterval musicFadeTime;
 @property (nonatomic) CGFloat musicVolume;
 @property (nonatomic) CGFloat effectsVolume;
 @property (readonly) BOOL isPlayingMusic;
+/** Called when music ends. Not called while looping */
 @property (copy) MusicCompletionBlock musicCompletion;
-@property (copy) MusicCompletionBlock loopCompletion;
 
 #pragma mark - Effects (short sounds that can intersect)
 

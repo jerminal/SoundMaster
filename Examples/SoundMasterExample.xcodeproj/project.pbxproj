@@ -11,6 +11,7 @@
 		9706174C17BA298100AA27EB /* shot.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9706174B17BA298100AA27EB /* shot.caf */; };
 		9706174E17BA2C5900AA27EB /* kick.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9706174D17BA2C5900AA27EB /* kick.caf */; };
 		9706175017BA4F1D00AA27EB /* loop_2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9706174F17BA4F1D00AA27EB /* loop_2.caf */; };
+		9720AE0B17BAD3BE00F4E1EF /* SoundMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 9720AE0A17BAD3BE00F4E1EF /* SoundMaster.m */; };
 		972CE90B17B9328100F7E41C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972CE90A17B9328100F7E41C /* Foundation.framework */; };
 		972CE90D17B9328100F7E41C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972CE90C17B9328100F7E41C /* CoreGraphics.framework */; };
 		972CE90F17B9328100F7E41C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972CE90E17B9328100F7E41C /* UIKit.framework */; };
@@ -27,7 +28,6 @@
 		972CE93617B9328100F7E41C /* SoundMasterExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 972CE93517B9328100F7E41C /* SoundMasterExampleTests.m */; };
 		972CE94017B93AE300F7E41C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972CE93F17B93AE300F7E41C /* AVFoundation.framework */; };
 		972CE94C17B946A600F7E41C /* loop_1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 972CE94B17B946A600F7E41C /* loop_1.caf */; };
-		972CE95017B946BF00F7E41C /* SoundMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 972CE94F17B946BF00F7E41C /* SoundMaster.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +45,8 @@
 		9706174B17BA298100AA27EB /* shot.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = shot.caf; sourceTree = "<group>"; };
 		9706174D17BA2C5900AA27EB /* kick.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kick.caf; sourceTree = "<group>"; };
 		9706174F17BA4F1D00AA27EB /* loop_2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = loop_2.caf; sourceTree = "<group>"; };
+		9720AE0917BAD3BE00F4E1EF /* SoundMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundMaster.h; sourceTree = "<group>"; };
+		9720AE0A17BAD3BE00F4E1EF /* SoundMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundMaster.m; sourceTree = "<group>"; };
 		972CE90717B9328100F7E41C /* SoundMasterExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundMasterExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		972CE90A17B9328100F7E41C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		972CE90C17B9328100F7E41C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,8 +68,6 @@
 		972CE93517B9328100F7E41C /* SoundMasterExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundMasterExampleTests.m; sourceTree = "<group>"; };
 		972CE93F17B93AE300F7E41C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		972CE94B17B946A600F7E41C /* loop_1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = loop_1.caf; sourceTree = "<group>"; };
-		972CE94E17B946BF00F7E41C /* SoundMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundMaster.h; sourceTree = "<group>"; };
-		972CE94F17B946BF00F7E41C /* SoundMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundMaster.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9720AE0817BAD3BE00F4E1EF /* SoundMaster */ = {
+			isa = PBXGroup;
+			children = (
+				9720AE0917BAD3BE00F4E1EF /* SoundMaster.h */,
+				9720AE0A17BAD3BE00F4E1EF /* SoundMaster.m */,
+			);
+			path = SoundMaster;
+			sourceTree = "<group>";
+		};
 		972CE8FE17B9328100F7E41C = {
 			isa = PBXGroup;
 			children = (
@@ -134,7 +143,7 @@
 				972CE91C17B9328100F7E41C /* Main.storyboard */,
 				972CE91F17B9328100F7E41C /* ViewController.h */,
 				972CE92017B9328100F7E41C /* ViewController.m */,
-				972CE94D17B946BF00F7E41C /* SoundMaster */,
+				9720AE0817BAD3BE00F4E1EF /* SoundMaster */,
 				972CE94A17B946A600F7E41C /* Sounds */,
 				972CE92217B9328100F7E41C /* Images.xcassets */,
 				972CE91117B9328100F7E41C /* Supporting Files */,
@@ -181,15 +190,6 @@
 				9706174917B981F900AA27EB /* dub.caf */,
 			);
 			path = Sounds;
-			sourceTree = "<group>";
-		};
-		972CE94D17B946BF00F7E41C /* SoundMaster */ = {
-			isa = PBXGroup;
-			children = (
-				972CE94E17B946BF00F7E41C /* SoundMaster.h */,
-				972CE94F17B946BF00F7E41C /* SoundMaster.m */,
-			);
-			path = SoundMaster;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,8 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				972CE95017B946BF00F7E41C /* SoundMaster.m in Sources */,
 				972CE92117B9328100F7E41C /* ViewController.m in Sources */,
+				9720AE0B17BAD3BE00F4E1EF /* SoundMaster.m in Sources */,
 				972CE91B17B9328100F7E41C /* AppDelegate.m in Sources */,
 				972CE91717B9328100F7E41C /* main.m in Sources */,
 			);
