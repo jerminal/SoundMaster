@@ -3,7 +3,7 @@ SoundMaster
  
 Ultra simple game audio engine for iOS. The most useful features in one box. 
 
-Features:
+Features
 --------
 1. Music fade in/out.
 2. Cross-fade between two music tracks (you can also make a smooth transition between two loops)
@@ -14,7 +14,7 @@ Features:
 7. Preloading music and sounds for best performance.
 8. You can look for other features in api.
 
-What’s In The Box:
+What’s In The Box
 --------
 1. SoundMaster class.
 2. Example iPhone project.
