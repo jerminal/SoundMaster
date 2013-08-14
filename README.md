@@ -9,7 +9,7 @@ Features
 2. Cross-fade between two music tracks (you can also make a smooth transition between two loops)
 3. Playing multiple sounds simultaneously.
 4. Setting relative volume for specific sounds.
-5. Pause, resume and loop music
+5. Pause, resume and loop music.
 6. Optimal memory usage.
 7. Preloading music and sounds for best performance.
 8. You can look for other features in api.
