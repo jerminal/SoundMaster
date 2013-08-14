@@ -51,7 +51,7 @@ For sound effects (stereo):
 
 Issues
 ------
-Please, inform us about bugs or ideas in [Issues](https://github.com/jerminal/SoundMaster/issues).
+Please inform us about bugs or ideas in [Issues](https://github.com/jerminal/SoundMaster/issues).
 
 Contact
 ------
