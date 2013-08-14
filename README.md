@@ -3,6 +3,7 @@ SoundMaster
  
 Ultra simple game audio engine for iOS. The most useful features in one box. 
 
+
 Features
 --------
 1. Music fade in/out.
@@ -45,7 +46,13 @@ For sound effects (mono):
 For sound effects (stereo):
 
 	afconvert -f caff -d ima4 {input_file_name} {output_file_name}.caf
+	
+	
 
 Issues
 ------
 Please, inform us about bugs or ideas in [Issues](https://github.com/jerminal/SoundMaster/issues).
+
+Contact
+------
+Made by J-Lab (http://www.jl.by)  for one of projects.
