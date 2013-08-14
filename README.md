@@ -55,4 +55,5 @@ Please, inform us about bugs or ideas in [Issues](https://github.com/jerminal/So
 
 Contact
 ------
-Made by J-Lab (http://www.jl.by)  for one of projects.
+Made by [J-Lab](http://www.jl.by)  for one of projects.
+Questions please write to: [support@jl.by](mailto:support@jl.by).
