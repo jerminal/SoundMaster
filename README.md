@@ -37,7 +37,7 @@ For background music (mono):
 
 For background music (stereo):
 
- afconvert -f caff -d aac {input_file_name} {output_file_name}.caf
+ 	afconvert -f caff -d aac {input_file_name} {output_file_name}.caf
 
 For sound effects (mono):
 
