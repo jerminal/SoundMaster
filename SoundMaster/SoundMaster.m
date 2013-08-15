@@ -244,21 +244,22 @@ typedef NS_ENUM(NSUInteger, ExtendedAVAudioPlayerType) {
         }
         nextPlayer.volume = self.musicVolume;
         nextPlayer.numberOfLoops = (loop ? -1 : 0);
-        if (duration < player.duration) {
+        nextPlayer.currentTime = 0.0;
+        if (duration > player.duration) {
             duration = player.duration;
         }
-        if (duration < nextPlayer.duration) {
+        if (duration > nextPlayer.duration) {
             duration = nextPlayer.duration;
         }
         if (loopEnds) {
-            player.numberOfLoops = 0;
             if (loop) {
                 nextPlayer.currentTime = nextPlayer.duration - duration;
             }
             NSTimeInterval waitTime;
             if (player.duration - player.currentTime < duration) {
-                waitTime = 2.0 * player.duration - player.currentTime - duration;//test this (выполняется когда на этом лупе не успеет произойти кросс фейд и нужно подождать следующего)
+                waitTime = 2.0 * player.duration - player.currentTime - duration;
             } else {
+                player.numberOfLoops = 0;
                 waitTime = player.duration - player.currentTime - duration;
             }
             NSDictionary *info = @{@"duration" : @(duration), @"player" : player, @"nextPlayer" : nextPlayer, @"fileName" : fileName};
