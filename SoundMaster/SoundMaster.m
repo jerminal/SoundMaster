@@ -69,15 +69,21 @@ typedef NS_ENUM(NSUInteger, ExtendedAVAudioPlayerType) {
 
 @implementation SoundMaster
 
+- (instancetype)init
+{
+    self  = [super init];
+    self.musicVolume = DEFAULT_MUSIC_VOLUME;
+    self.effectsVolume = DEFAULT_EFFECTS_VOLUME;
+    self.musicFadeTime = DEFAULT_MUSIC_FADE_TIME;
+    return self;
+}
+
 + (instancetype)sharedMaster
 {
     static SoundMaster *master;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         master = [SoundMaster new];
-        master.musicVolume = DEFAULT_MUSIC_VOLUME;
-        master.effectsVolume = DEFAULT_EFFECTS_VOLUME;
-        master.musicFadeTime = DEFAULT_MUSIC_FADE_TIME;
     });
     return master;
 }
@@ -230,17 +236,31 @@ typedef NS_ENUM(NSUInteger, ExtendedAVAudioPlayerType) {
 {
     ExtendedAVAudioPlayer *player = self.musics[self.currentMusicPath];
     if (player.isPlaying) {
-        ExtendedAVAudioPlayer *nextPlayer = [self playerWithFileName:fileName];
-        nextPlayer.type = ExtendedAVAudioPlayerTypeMusic;
-        self.musics[fileName] = nextPlayer;
+        ExtendedAVAudioPlayer *nextPlayer = self.musics[fileName];
+        if (!nextPlayer) {
+            nextPlayer = [self playerWithFileName:fileName];
+            nextPlayer.type = ExtendedAVAudioPlayerTypeMusic;
+            self.musics[fileName] = nextPlayer;
+        }
         nextPlayer.volume = self.musicVolume;
         nextPlayer.numberOfLoops = (loop ? -1 : 0);
+        if (duration < player.duration) {
+            duration = player.duration;
+        }
+        if (duration < nextPlayer.duration) {
+            duration = nextPlayer.duration;
+        }
         if (loopEnds) {
             player.numberOfLoops = 0;
             if (loop) {
-                nextPlayer.currentTime = MAX(nextPlayer.duration - duration, 0.0);
-            } 
-            NSTimeInterval waitTime = MAX(player.duration - player.currentTime - duration, 0.0);
+                nextPlayer.currentTime = nextPlayer.duration - duration;
+            }
+            NSTimeInterval waitTime;
+            if (player.duration - player.currentTime < duration) {
+                waitTime = 2.0 * player.duration - player.currentTime - duration;//test this (выполняется когда на этом лупе не успеет произойти кросс фейд и нужно подождать следующего)
+            } else {
+                waitTime = player.duration - player.currentTime - duration;
+            }
             NSDictionary *info = @{@"duration" : @(duration), @"player" : player, @"nextPlayer" : nextPlayer, @"fileName" : fileName};
             [self performSelector:@selector(performCrossFade:) withObject:info afterDelay:waitTime];
         } else {
@@ -263,6 +283,25 @@ typedef NS_ENUM(NSUInteger, ExtendedAVAudioPlayerType) {
 - (void)crossFadeToMusic:(NSString *)fileName loop:(BOOL)loop
 {
     [self crossFadeToMusic:fileName loop:loop fadeDuration:self.musicFadeTime];
+}
+
+- (void)clearCache
+{
+    ExtendedAVAudioPlayer *activePlayer;
+    for (ExtendedAVAudioPlayer *player in self.musics.allValues) {
+        if (player.isPlaying) {
+            activePlayer = player;
+            break;
+        }
+    }
+    if (activePlayer && self.musics.count > 1) {
+        NSMutableArray *mValues = self.musics.allValues.mutableCopy;
+        NSInteger index = [mValues indexOfObject:activePlayer];
+        [mValues exchangeObjectAtIndex:index withObjectAtIndex:0];
+        [mValues removeObjectsInRange:NSMakeRange(1, mValues.count - 1)];
+    } 
+    [self.effects removeAllObjects];
+    [self.effectsRelativeVolumes removeAllObjects];
 }
 
 #pragma mark - Public Properties
